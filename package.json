@@ -1,0 +1,56 @@
+{
+  "name": "@studio/emojilog",
+  "version": "0.0.0",
+  "description": "A CLI to pretty print the Studio Log ndjson with emoji",
+  "bin": {
+    "emojilog": "bin/emojilog.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha",
+    "watch": "mocha --watch",
+    "posttest": "npm run lint",
+    "preversion": "npm test",
+    "version": "changes --commits",
+    "postversion": "git push --follow-tags && npm publish"
+  },
+  "keywords": [
+    "log",
+    "cli",
+    "emoji",
+    "pretty",
+    "json",
+    "ndjson"
+  ],
+  "author": "Maximilian Antoni <max@javascript.studio>",
+  "homepage": "https://github.com/javascript-studio/studio-emojilog",
+  "eslintConfig": {
+    "extends": "@studio"
+  },
+  "dependencies": {
+    "@studio/log-format": "^1.0.0",
+    "@studio/ndjson": "^2.0.0",
+    "minimist": "^1.2.0",
+    "source-map": "^0.6.1"
+  },
+  "devDependencies": {
+    "@sinonjs/referee-sinon": "^4.0.0",
+    "@studio/changes": "^1.5.1",
+    "@studio/eslint-config": "^1.0.2",
+    "eslint": "^5.0.1",
+    "mocha": "^5.2.0",
+    "uglify-es": "^3.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javascript-studio/studio-emojilog.git"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
+  "license": "MIT"
+}
