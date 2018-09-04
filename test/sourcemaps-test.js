@@ -51,11 +51,7 @@ describe('sourcemaps', () => {
     stream.end();
   });
 
-  it('does not change row if no match', (done) => {
-    const script = `function test() {
-      unknown()
-    }
-    test()`;
+  function sourceMapsForScript(script) {
     const result = uglify.minify(script, {
       sourceMap: { filename: 'test.js' }
     });
@@ -65,6 +61,14 @@ describe('sourcemaps', () => {
 
     const stream = new SourceMaps('source.js.map');
     stream.pipe(out);
+    return stream;
+  }
+
+  it('does not change row if no match', (done) => {
+    const stream = sourceMapsForScript(`function test() {
+      unknown()
+    }
+    test()`);
 
     out.on('finish', () => {
       assert.equals(output, 'at xyz (any.js:5:17)\n');
@@ -73,6 +77,49 @@ describe('sourcemaps', () => {
 
     stream.write('at xyz (any.js:5:17)\n');
     stream.end();
+  });
+
+  it('works when receiving smaller chunks', (done) => {
+    const stream = sourceMapsForScript(`function test() {
+      unknown()
+    }
+    test()`);
+
+    out.on('finish', () => {
+      assert.equals(output, 'at unknown (0:2:6)\n');
+      done();
+    });
+
+    stream.write('at xyz ');
+    stream.end('(any.js:1:17)\n');
+  });
+
+  it('maps line without name', (done) => {
+    const stream = sourceMapsForScript(`function test() {
+      throw new Error()
+    }
+    test()`);
+
+    out.on('finish', () => {
+      assert.equals(output, 'at 0:2:6\n');
+      done();
+    });
+
+    stream.end('at any.js:1:17\n');
+  });
+
+  it('maps line without name, but with mapped name', (done) => {
+    const stream = sourceMapsForScript(`function test() {
+      unknown()
+    }
+    test()`);
+
+    out.on('finish', () => {
+      assert.equals(output, 'at unknown (0:2:6)\n');
+      done();
+    });
+
+    stream.end('at any.js:1:17\n');
   });
 
 });
