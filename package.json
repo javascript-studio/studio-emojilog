@@ -1,6 +1,6 @@
 {
   "name": "@studio/emojilog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI to pretty print the Studio Log ndjson with emoji",
   "bin": {
     "emojilog": "bin/emojilog.js"

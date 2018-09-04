@@ -1,5 +1,18 @@
 # Changes
 
+## 1.0.1
+
+- 🐛 [`b62ae3a`](https://github.com/javascript-studio/studio-emojilog/commit/b62ae3add31280cb8912ab2f075fbadc5326161f)
+  Fix source mapping for partial line chunks
+- 📚 [`00da03d`](https://github.com/javascript-studio/studio-emojilog/commit/00da03d3a2eedac92c69ddc9dfd84fa51ea2fd0c)
+  New readme header
+- 📚 [`f82cb07`](https://github.com/javascript-studio/studio-emojilog/commit/f82cb07b5e02ea7cfc4a67b27b1590d7c546bc2f)
+  Update Studio Changes for `--footer` support
+- ✨ [`728bc4a`](https://github.com/javascript-studio/studio-emojilog/commit/728bc4abd43e16ac4c3bd882ac5fc63c2b97dc7d)
+  Add travis config
+
+_Released by [Maximilian Antoni](https://github.com/mantoni) on 2018-09-04._
+
 ## 1.0.0
 
 ✨ Extract implementation from Studio Log.
