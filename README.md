@@ -1,6 +1,23 @@
-# Studio Emojilog
-
-🌈 A pretty printer for the Studio Log format with emoji ✨
+<h1 align="center">
+  Studio Emojilog
+</h1>
+<p align="center">
+  🌈 A pretty printer for the Studio Log format with emoji ✨
+</p>
+<p align="center">
+  <a href="https://www.npmjs.com/package/@studio/emojilog">
+    <img src="https://img.shields.io/npm/v/@studio/emojilog.svg" alt="npm Version">
+  </a>
+  <a href="https://semver.org">
+    <img src="https://img.shields.io/:semver-%E2%9C%93-blue.svg" alt="SemVer">
+  </a>
+  <a href="https://travis-ci.org/javascript-studio/studio-emojilog">
+    <img src="https://img.shields.io/travis/javascript-studio/studio-emojilog/master.svg" alt="Build Status">
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License">
+  </a>
+</p>
 
 ![](https://github.com/javascript-studio/studio-emojilog/raw/master/emojilog.png)
 
