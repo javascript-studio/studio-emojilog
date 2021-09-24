@@ -108,6 +108,20 @@ describe('sourcemaps', () => {
     stream.end('at any.js:1:17\n');
   });
 
+  it('maps line without name and no "at"', (done) => {
+    const stream = sourceMapsForScript(`function test() {
+      throw new Error()
+    }
+    test()`);
+
+    out.on('finish', () => {
+      assert.equals(output, 'at 0:2:6\n');
+      done();
+    });
+
+    stream.end('any.js:1:17\n');
+  });
+
   it('maps line without name, but with mapped name', (done) => {
     const stream = sourceMapsForScript(`function test() {
       unknown()
@@ -120,6 +134,20 @@ describe('sourcemaps', () => {
     });
 
     stream.end('at any.js:1:17\n');
+  });
+
+  it('maps line without name, but with mapped name without "at"', (done) => {
+    const stream = sourceMapsForScript(`function test() {
+      unknown()
+    }
+    test()`);
+
+    out.on('finish', () => {
+      assert.equals(output, 'at unknown (0:2:6)\n');
+      done();
+    });
+
+    stream.end('any.js:1:17\n');
   });
 
 });
