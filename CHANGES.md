@@ -1,5 +1,14 @@
 # Changes
 
+## 1.0.2
+
+- 🐛 [`1eff685`](https://github.com/javascript-studio/studio-emojilog/commit/1eff685aab21c9e42ef9ed48007191718aa39015)
+  Fix sourcemaps for lines without leading "at"
+- ✨ [`ebcd103`](https://github.com/javascript-studio/studio-emojilog/commit/ebcd10304c3a3077cc1a47bc4c0b9a7582fd2fe6)
+  Add .gitignore
+
+_Released on 2021-09-24._
+
 ## 1.0.1
 
 - 🐛 [`b62ae3a`](https://github.com/javascript-studio/studio-emojilog/commit/b62ae3add31280cb8912ab2f075fbadc5326161f)
